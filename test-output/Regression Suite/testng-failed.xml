@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Regression Suite]">
+  <parameter name="browser" value="headless"/>
+  <test thread-count="5" name="Regression Test(failed)">
+    <classes>
+      <class name="tests.UserRegisterationTest">
+        <methods>
+          <include name="startDriver"/>
+          <include name="setUpClass"/>
+          <include name="stopDriver"/>
+          <include name="RegisteredUserCanLogout"/>
+          <include name="screenshotOnFailure"/>
+          <include name="RegisteredUserCanLogin"/>
+          <include name="tearDownClass"/>
+          <include name="UserCanRegisterSuccessfully"/>
+        </methods>
+      </class> <!-- tests.UserRegisterationTest -->
+    </classes>
+  </test> <!-- Regression Test(failed) -->
+</suite> <!-- Failed suite [Regression Suite] -->

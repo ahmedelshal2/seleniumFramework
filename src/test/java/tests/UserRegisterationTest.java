@@ -13,29 +13,30 @@ public class UserRegisterationTest extends TestBase {
 	LoginPage loginObject;
 	
 	
-	@Test(priority=1,alwaysRun=true)
+	@Test(priority=1)
 	public void UserCanRegisterSuccessfully()
 	{
 		
 		homeObject=new HomePage(driver);
 		homeObject.openRegisterationPage();
 		registerObject=new UserRegisterationPage(driver);
-		registerObject.userRegistration("ali","ahmed","ahe2204@gmail.com","123456ahmed");
+		registerObject.userRegistration("ali","ahmed","nana2022@gmail.com","123456789");
 		Assert.assertTrue(registerObject.successMessage.getText().contains("Your registration completed"));
 		
 	}
 	
-	@Test(dependsOnMethods= {"UserCanRegisterSuccessfully"})
+	
+	@Test(priority=2)
 	public void RegisteredUserCanLogout()
 	{
 		registerObject.userLogout();
 	}
-	@Test(dependsOnMethods= {"RegisteredUserCanLogout"})
+	@Test(priority=3)
 	public void RegisteredUserCanLogin()
 	{
 		homeObject.openLoginPage();
 		loginObject=new LoginPage(driver);
-		loginObject.UserLogin("ahelshal2014@gmail.com", "123456ahmed");
+		loginObject.UserLogin("nana2022@gmail.com", "123456789");
 		
 		Assert.assertTrue(registerObject.logoutLink.getText().contains("Log out"));
 	}
